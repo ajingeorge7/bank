@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Example</title>
+    <style>
+        body {
+            /* Set the background image */
+            background-image: url('{% static 'images/pp.png' %}');
+            /* Set background size to cover the entire viewport */
+            background-size: cover;
+            /* Center the background image */
+            background-position: center;
+            /* Fix the background image while scrolling */
+            background-attachment: fixed;
+            /* Set background color in case the image is not available or not fully covering */
+            background-color: #f0f0f0;
+            /* Set the font color to be readable on top of the background image */
+            color: #333;
+        }
+
+        /* Add additional styling for your content if needed */
+        .content {
+            /* Add styling for your content */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<
+</body>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'static/styles/style.css' %}">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <form class="col-12 col-sm-6" action="login" method="post">
+<h1 style="color: black; background-color:lightgray;">Login here</h1>
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="username" placeholder="Username">
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" name="password" placeholder="Enter your password">
+                </div>
+                <div class="mb-3">
+                    <input type="submit" value="Login" class="btn btn-warning">
+                </div>
+            </form>
+
+        </div>
+
+        <div class="row mb-1">
+            <div class="col d-flex justify-content-center">
+                <div class="text-center">
+                                                            {% for msg in messages %}
+{{msg}}
+{% endfor %}
+                    <p>Not a member? <a href="{% url 'finalapp:register' %}">Register</a></p>
+
+</div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

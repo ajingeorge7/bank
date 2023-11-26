@@ -1,0 +1,19 @@
+<style>
+        body {
+            background-image: url('static/images/images (1).jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white background for the form */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+  <style>

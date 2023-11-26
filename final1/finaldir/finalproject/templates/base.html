@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JavaScript and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+<!-- Image and text -->
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+
+aj banks  pvt.LTD
+<div class="container text-center">
+  <div class="row align-items-end">
+    <div class="col">
+          <a href="{% url 'finalapp:login' %}" class="btn btn-warning">Login</a>
+    </div>
+    <div class="col">
+        <a href="{% url 'finalapp:register' %}" class="btn btn-warning">register</a>
+    </div>
+      <div class="col">
+           <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <h6 style="color: black; background-color:#ecf016;"> our branches</h6>
+
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Wayanad_district">Wayanad</a></li>
+            <li><a class="dropdown-item" href="https://www.bing.com/ck/a?!&&p=2b7ccb95506cac47JmltdHM9MTcwMDk1NjgwMCZpZ3VpZD0xNGYzMjhmZS1lMmRiLTZkYzctMTRhYS0zYjJhZTM3NjZjY2EmaW5zaWQ9NTI3NQ&ptn=3&ver=2&hsh=3&fclid=14f328fe-e2db-6dc7-14aa-3b2ae3766cca&psq=kozhikode&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvS296aGlrb2Rl&ntb=1">kozhikode</a></li>
+            <li><a class="dropdown-item" href="https://www.bing.com/ck/a?!&&p=e77d401e26c270c7JmltdHM9MTcwMDk1NjgwMCZpZ3VpZD0xNGYzMjhmZS1lMmRiLTZkYzctMTRhYS0zYjJhZTM3NjZjY2EmaW5zaWQ9NTUxNw&ptn=3&ver=2&hsh=3&fclid=14f328fe-e2db-6dc7-14aa-3b2ae3766cca&psq=ernakulam&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRXJuYWt1bGFt&ntb=1">Ernakulam</a></li>
+            <li><a class="dropdown-item" href="https://www.bing.com/ck/a?!&&p=1fcb6ddac1fb920fJmltdHM9MTcwMDk1NjgwMCZpZ3VpZD0xNGYzMjhmZS1lMmRiLTZkYzctMTRhYS0zYjJhZTM3NjZjY2EmaW5zaWQ9NTI3Mg&ptn=3&ver=2&hsh=3&fclid=14f328fe-e2db-6dc7-14aa-3b2ae3766cca&psq=kannur&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvS2FubnVy&ntb=1">Kannur</a></li>
+            <li><a class="dropdown-item" href="https://www.bing.com/ck/a?!&&p=ddcde9380a08f392JmltdHM9MTcwMDk1NjgwMCZpZ3VpZD0xNGYzMjhmZS1lMmRiLTZkYzctMTRhYS0zYjJhZTM3NjZjY2EmaW5zaWQ9NTI1NA&ptn=3&ver=2&hsh=3&fclid=14f328fe-e2db-6dc7-14aa-3b2ae3766cca&psq=thrissur&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGhyaXNzdXI&ntb=1">Thrissur</a></li>
+          </ul>
+        </li>
+          </div>
+    </div>
+    </div>
+
+
+  </a>
+
+</nav>
+  <h1 style="color: #ff0000;  font-family: 'Times New Roman'">WeLcOmE !!!</h1>
+{% block body%}
+{%endblock %}
+</body>
+</html>

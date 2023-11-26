@@ -1,0 +1,122 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JavaScript and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+
+aj banks  pvt.LTD
+      {% if user.is_authenticated %}
+     <h3> Mr . {{user.username}}  </h3>
+{% else %}
+
+<h1>not logged in</h1>
+{% endif %}
+  </a>
+</nav>
+<div class="container" >
+         <div class="row">
+ <h1 style="color: #a88d32; background-color: lightgray;">Register here</h1>
+
+         <div class="row justify-content-center">
+            <div class="col-md-6"></div> <div class="mb-3">
+    <input type="text" name="username" placeholder="name"><br>
+          </div>  <div class="mb-3">
+  <input type="date" name="date" placeholder="Date of birth"><br>
+             </div> <div class="mb-3">
+  <input type="number"  placeholder="Enter your age"><br>
+              </div>     <div class="mb-3">
+  <input type="radio" name="gender" value="male" id="maleRadio">
+  <label for="maleRadio">Male</label>
+
+  <input type="radio" name="gender" value="female" id="femaleRadio">
+  <label for="femaleRadio">Female</label><br>
+                  </div>  <div class="mb-3">
+  <input type="email"  name="email" placeholder="email"><br>
+                  </div>    <div class="mb-3">
+  <input type="text" name="address" placeholder="Address"><br>
+           </div> <div class="mb-3">
+
+
+  <label for="district">District:</label>
+<select id="district" name="district">
+  <option value="Wayanad">Wayanad</option>
+  <option value="Ernakulam">Ernakulam</option>
+  <option value="Kannur">Kannur</option>
+  <!-- Add more districts as needed -->
+</select>
+
+<label for="Branch">Branch</label>
+<select id="Branch" name="Branch">
+  <!-- Options will be dynamically populated based on the selected district -->
+</select>
+
+<script>
+document.getElementById('district').addEventListener('change', function() {
+  var districtSelect = document.getElementById('district');
+  var branchSelect = document.getElementById('Branch');
+  var selectedDistrict = districtSelect.value;
+
+  // Clear existing options
+  branchSelect.innerHTML = '';
+
+  // Add options based on the selected district
+  if (selectedDistrict === 'Wayanad') {
+    addOption(branchSelect, 'kapetta', 'Kalpetta');
+    addOption(branchSelect, 'sulthanbathery', 'Sulthan Bathery');
+    addOption(branchSelect, 'mananthavady', 'Mananthavady');
+  } else if (selectedDistrict === 'Ernakulam') {
+    addOption(branchSelect, 'kalamassery', 'Kalamassery');
+    addOption(branchSelect, 'vytila', 'Vyttila');
+    addOption(branchSelect, 'fortkochi', 'Fort Kochi');
+  } else if (selectedDistrict === 'Kannur') {
+    addOption(branchSelect, 'payyannur', 'Payyannur');
+    addOption(branchSelect, 'chovva', 'Chovva');
+    addOption(branchSelect, 'darmadam', 'Darmadam');
+  }
+});
+
+function addOption(select, value, text) {
+  var option = document.createElement('option');
+  option.value = value;
+  option.text = text;
+  select.add(option);
+}
+
+// Initial population when the page loads
+document.getElementById('district').dispatchEvent(new Event('change'));
+</script><br>
+              </div><div class="mb-3">
+<label for="account">account type</label>
+<select id="account" name="account">
+  <option value="Wayanad">savings</option>
+  <option value="Ernakulam">current</option>
+</select><br>
+                <div class="mb-3">
+<h4>materials required</h4>
+  <input type="checkbox" name="subscribe" value="yes">Credit card<br>
+  <input type="checkbox" name="subscribe" value="yes">Check book<br>
+  <input type="checkbox" name="subscribe" value="yes">Debit card<br>
+<form  action="sm" method="post">
+<a href="{% url 'finalapp:logout' %}" class="btn btn-Danger">logout</a>
+  <button type="button" onclick="submitForm()" class="btn btn-warning">Submit</button>
+    </form>
+
+    <!-- Display message container -->
+    <div id="messageContainer"></div>
+
+    <script>
+        function submitForm() {
+            // You can add form validation logic here before displaying the message
+
+            // Display the success message
+            var messageContainer = document.getElementById('messageContainer');
+            messageContainer.innerHTML = '<p style="color: green;">Form submitted successfully! <a href="{% url 'finalapp:index' %}">Back home</a></p>';
+        }
+    </script>
+</form>
+</div>
+</div>
